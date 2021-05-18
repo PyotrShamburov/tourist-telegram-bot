@@ -1,0 +1,140 @@
+POST http://localhost:8080/city/add
+Content-Type: application/json
+X-Token:f14e95aa-de29-45ee-896a-53df6311f687
+
+{
+  "id": 0,
+  "name": "Moscow",
+  "yearOfFoundation": 903,
+  "population": 34567329498,
+  "information": "Do not forget visit Red Square."
+}
+
+###
+POST http://localhost:8080/city/add
+Content-Type: application/json
+X-Token:f14e95aa-de29-45ee-896a-53df6311f687
+
+{
+  "id": 0,
+  "name": "Minsk",
+  "yearOfFoundation": 1234,
+  "population": 1000002030000000,
+  "information": "Do not forget visit National Library."
+}
+###
+POST http://localhost:8080/city/add
+Content-Type: application/json
+X-Token:f14e95aa-de29-45ee-896a-53df6311f687
+
+{
+  "id": 0,
+  "name": "Brest",
+  "yearOfFoundation": 1340,
+  "population": 1000002,
+  "information": "Do not forget visit Brest's Castle."
+}
+###
+POST http://localhost:8080/city/add
+Content-Type: application/json
+X-Token:f14e95aa-de29-45ee-896a-53df6311f687
+
+{
+  "id": 0,
+  "name": "London",
+  "yearOfFoundation": 679,
+  "population": 1000002030,
+  "information": "You can go to Big-Ben or TimeSquare ."
+}
+###
+
+GET http://localhost:8080/city/all
+Content-Type: application/json
+X-Token:c8e00ed3-d661-49de-a5e4-69322c9ab317
+###
+
+
+PUT http://localhost:8080/city/update/Minsk
+Content-Type: application/json
+X-Token:f14e95aa-de29-45ee-896a-53df6311f687
+
+{
+  "id": 0,
+  "name": "Rome",
+  "yearOfFoundation": 370,
+  "population": 12423523,
+  "information": "Do not forget visit Coliseum."
+}
+
+###
+PUT http://localhost:8080/city/update/name/Rome
+Content-Type: application/json
+X-Token:f14e95aa-de29-45ee-896a-53df6311f687
+
+{
+  "name": "Minsk"
+}
+
+###
+
+PUT http://localhost:8080/city/update/year/Minsk
+Content-Type: application/json
+X-Token:407dc96a-3a82-4e1e-9876-0f22416b9224
+
+{
+  "yearOfFoundation": "2030"
+}
+
+###
+
+PUT http://localhost:8080/city/update/population/Minsk
+Content-Type: application/json
+X-Token:407dc96a-3a82-4e1e-9876-0f22416b9224
+
+{
+  "population": 65465756
+}
+###
+PUT http://localhost:8080/city/update/information/Minsk
+Content-Type: application/json
+X-Token:407dc96a-3a82-4e1e-9876-0f22416b9224
+
+{
+  "information": "Do not forget visit National Library."
+}
+###
+
+
+DELETE http://localhost:8080/city/delete/Minsk
+Content-Type: application/json
+X-Token:407dc96a-3a82-4e1e-9876-0f22416b9224
+###
+
+GET http://localhost:8080/city/Minsk
+Content-Type: application/json
+X-Token:407dc96a-3a82-4e1e-9876-0f22416b9224
+###
+
+POST http://localhost:8080/admin/add
+Content-Type: application/json
+
+{
+  "id": 0,
+  "adminName": "Mike",
+  "password": "Burov6011"
+
+}
+###
+
+POST http://localhost:8080/admin/auth
+Content-Type: application/json
+
+{
+  "adminName": "Mike",
+  "password": "Burov6011"
+}
+
+###
+DELETE http://localhost:8080/admin/delete/Mike
+Content-Type: application/json
+X-Token:8e67b705-3517-49fa-8342-5971279d1d90
