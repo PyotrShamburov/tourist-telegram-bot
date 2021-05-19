@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 
@@ -31,8 +28,8 @@ public class City {
     @Override
     public String toString() {
         return  name.toUpperCase()+"\n"+
-                "Year Of Foundation : " + yearOfFoundation + ".\n" +
-                "Population : " + population + ".\n"+
-                "Information : " + information+" .";
+                "Founded : " + yearOfFoundation + " year.\n" +
+                "Population : " + population + " th.peoples.\n"+
+                "Info: " + information;
     }
 }

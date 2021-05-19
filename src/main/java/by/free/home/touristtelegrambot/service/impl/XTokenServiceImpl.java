@@ -23,7 +23,7 @@ public class XTokenServiceImpl implements XTokenService {
     @Override
     public String generateToken() {
         UUID uuid = UUID.randomUUID();
-        log.info("New xtoken has been generated "+uuid.toString()+".");
+        log.info("New XToken has been generated "+uuid.toString()+".");
         return uuid.toString();
     }
 
@@ -33,28 +33,25 @@ public class XTokenServiceImpl implements XTokenService {
         String key = generateToken();
         xToken.setAdminId(adminId);
         xToken.setToken(key);
-        tokenRepository.save(xToken);
-        log.info("Xtoken has been added to database. Key = "+key+".");
+        XToken savedXToken = (XToken) tokenRepository.save(xToken);
+        log.info("XToken has been added to database. XToken: ["+savedXToken+"].");
         return key;
     }
 
     @Override
     public boolean isAdmin(String token) {
-        log.info("Is admin check by token! Token ="+token+".");
+        log.info("Is admin check by XToken! XToken = "+token+".");
         Optional<XToken> xToken = tokenRepository.findByToken(token);
         if (xToken.isPresent()) {
-            Optional<Admin> adminById = adminService.getAdminById(xToken.get().getAdminId());
+            log.info("XToken "+token+" is exists!");
+            long adminId = (long) xToken.get().getAdminId();
+            Optional<Admin> adminById = adminService.getAdminById(adminId);
             if (adminById.isPresent()) {
+                log.info("Admin with id ["+adminId+"] exists!");
                 return true;
             }
         }
-        log.error("Token not found! Token ="+token+".");
+        log.error("XToken not found! Token = "+token+".");
         return false;
-    }
-
-    @Override
-    public boolean validToken(String token) {
-        log.info("Token validation check! Token ="+token+".");
-        return tokenRepository.existsByToken(token);
     }
 }

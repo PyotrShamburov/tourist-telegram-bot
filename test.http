@@ -1,50 +1,74 @@
 POST http://localhost:8080/city/add
 Content-Type: application/json
-X-Token:f14e95aa-de29-45ee-896a-53df6311f687
+X-Token:a110ecda-b0a7-4959-a02e-7e77937b8f80
 
 {
   "id": 0,
   "name": "Moscow",
-  "yearOfFoundation": 903,
-  "population": 34567329498,
+  "yearOfFoundation": 203,
+  "population": 23457,
   "information": "Do not forget visit Red Square."
 }
 
 ###
 POST http://localhost:8080/city/add
 Content-Type: application/json
-X-Token:f14e95aa-de29-45ee-896a-53df6311f687
+X-Token:a110ecda-b0a7-4959-a02e-7e77937b8f80
 
 {
   "id": 0,
   "name": "Minsk",
   "yearOfFoundation": 1234,
-  "population": 1000002030000000,
-  "information": "Do not forget visit National Library."
+  "population": 1000,
+  "information": "Do not forget visit National Library and Gallery!"
 }
 ###
 POST http://localhost:8080/city/add
 Content-Type: application/json
-X-Token:f14e95aa-de29-45ee-896a-53df6311f687
+X-Token:a110ecda-b0a7-4959-a02e-7e77937b8f80
 
 {
   "id": 0,
   "name": "Brest",
   "yearOfFoundation": 1340,
-  "population": 1000002,
-  "information": "Do not forget visit Brest's Castle."
+  "population": 1000,
+  "information": "Do not forget visit Brest's Fortress."
 }
 ###
 POST http://localhost:8080/city/add
 Content-Type: application/json
-X-Token:f14e95aa-de29-45ee-896a-53df6311f687
+X-Token:a110ecda-b0a7-4959-a02e-7e77937b8f80
 
 {
   "id": 0,
   "name": "London",
   "yearOfFoundation": 679,
-  "population": 1000002030,
+  "population": 348287,
   "information": "You can go to Big-Ben or TimeSquare ."
+}
+###
+POST http://localhost:8080/city/add
+Content-Type: application/json
+X-Token:a110ecda-b0a7-4959-a02e-7e77937b8f80
+
+{
+  "id": 0,
+  "name": "Rome",
+  "yearOfFoundation": 324,
+  "population": 86494,
+  "information": "Coliseum is most popular place here!"
+}
+###
+POST http://localhost:8080/city/add
+Content-Type: application/json
+X-Token:a110ecda-b0a7-4959-a02e-7e77937b8f80
+
+{
+  "id": 0,
+  "name": "Berlin",
+  "yearOfFoundation": 678,
+  "population": 21346,
+  "information": "Visit Brandenburg Gate."
 }
 ###
 
