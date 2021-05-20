@@ -12,6 +12,8 @@ In project used follows technologies: <br>
 - Hibernate-Validator<br>
 - Validation-API<br>
 - Lombok<br>
+- JUnit5<br>
+- Slf4J<br>
 <br>
 External library, for work with telegram: <br>
 - telegrambots-spring-boot-starter , version 5.0.1.1<br>
@@ -40,14 +42,44 @@ JSON example :<br>
   "password": "Pass2021"<br>
   <br>
 [DELETE]/admin/delete/{adminName} - delete administrator by name.<br>
+<br>
 [GET]/admin/show/{adminName} - get a JSON with information about administrator by name.<br>
-/city/add
-/city/delete/{cityName}
-/city/{cityName}
-/city/update/{cityName}
-/city/update/name/{cityName}
-/city/update/year/{cityName}
-/city/update/population/{cityName}
-/city/update/information/{cityName}
-/city/all
+<br>
+[POST]/city/add - save new city in database.<br>
+Population must be indicated in thousands.<br>
+JSON example :<br>
+  "name": "Minsk",<br>
+  "yearOfFoundation": 1234,<br>
+  "population": 1000,<br>
+  "information": "Do not forget visit National Library and Gallery!"<br>
+  <br>
+[POST]/city/delete/{cityName} - delete city from database by name.<br>
+<br>
+[GET]/city/{cityName} - get city from database by name.<br>
+<br>
+[PUT]/city/update/{cityName} - update all fields of city by name.<br>
+JSON example :<br>
+"name": "Minsk",<br>
+  "yearOfFoundation": 1234,<br>
+  "population": 1000,<br>
+  "information": "Do not forget visit National Library and Gallery!"<br>
+  <br>
+[PUT]/city/update/name/{cityName} - update only name of city by old name.<br>
+JSON example :<br>
+"name": "Minsk"<br>
+<br>
+[PUT]/city/update/year/{cityName} - update only year of foundation by name of city.<br>
+JSON example :<br>
+"yearOfFoundation": 1234,<br>
+<br>
+[PUT]/city/update/population/{cityName} - update only population by name of city.<br>
+Population must be indicated in thousands.<br>
+JSON example :<br>
+"population": 1000,<br>
+<br>
+[POST]/city/update/information/{cityName} - update information about existing in database city by name.<br>
+JSON example :<br>
+"information": "Do not forget visit National Library."<br>
+<br>
+[GET]/city/all - get list of all cities from database in JSON.<br>
 
