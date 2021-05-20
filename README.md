@@ -23,49 +23,49 @@ Only registered and authorized in the system administrator can perform operation
 After authorization, the administrator receives a token with which he can work with data.<br>
 It is necessary to place the token in the header of the HTTP request after the "X-Token:". Without the token you will see response code 403.<br>
 <br>
-Sample of X-Token: f14e95aa-de29-45ee-896a-53df6311f687.
+Sample of X-Token: f14e95aa-de29-45ee-896a-53df6311f687.<br>
 <br>
 Entities implements in project (they storage in database):<br>
  Admin :<br>
- - id - long.
- - adminName - String.
- - password - String.
+ - id - long.<br>
+ - adminName - String.<br>
+ - password - String.<br>
  <br>
- City :
- - id - long.
- - name - String.
- - yearOfFoundation - String.
- - population - long.
- - information - String.
+ City :<br>
+ - id - long.<br>
+ - name - String.<br>
+ - yearOfFoundation - String.<br>
+ - population - long.<br>
+ - information - String.<br>
  <br>
- XToken :
- - id - long.
- - adminId - long.
- - token - String.
+ XToken :<br>
+ - id - long.<br>
+ - adminId - long.<br>
+ - token - String.<br>
 <br>
 HTTP requests implements in project:<br>
  - Access performed without token:<br>
-- [POST]/admin/add - registration and addition new administrator in database.<br>
+[POST]/admin/add - registration and addition new administrator in database.<br>
 JSON example for registration:<br>
 "adminName": "Mike",<br>
   "password": "Pass2021"<br>
   <br>
-- [POST]/admin/auth - authorization, after it step you take token.<br>
+[POST]/admin/auth - authorization, after it step you take token.<br>
 JSON example for authorization:<br>
 "adminName": "Mike",<br>
   "password": "Pass2021"<br>
 <br>
  - Access performed only with token:<br>
-- [PUT]/admin/update/{adminName} - update existing administrator by name.<br>
+[PUT]/admin/update/{adminName} - update existing administrator by name.<br>
 JSON example :<br>
 "adminName": "Mike",<br>
   "password": "Pass2021"<br>
   <br>
-- [DELETE]/admin/delete/{adminName} - delete administrator by name.<br>
+[DELETE]/admin/delete/{adminName} - delete administrator by name.<br>
 <br>
-- [GET]/admin/show/{adminName} - get a JSON with information about administrator by name.<br>
+[GET]/admin/show/{adminName} - get a JSON with information about administrator by name.<br>
 <br>
-- [POST]/city/add - save new city in database.<br>
+[POST]/city/add - save new city in database.<br>
 Population must be indicated in thousands.<br>
 JSON example :<br>
   "name": "Minsk",<br>
@@ -73,33 +73,33 @@ JSON example :<br>
   "population": 1000,<br>
   "information": "Do not forget visit National Library and Gallery!"<br>
   <br>
-- [POST]/city/delete/{cityName} - delete city from database by name.<br>
+[POST]/city/delete/{cityName} - delete city from database by name.<br>
 <br>
-- [GET]/city/{cityName} - get city from database by name.<br>
+[GET]/city/{cityName} - get city from database by name.<br>
 <br>
-- [PUT]/city/update/{cityName} - update all fields of city by name.<br>
+[PUT]/city/update/{cityName} - update all fields of city by name.<br>
 JSON example :<br>
 "name": "Minsk",<br>
   "yearOfFoundation": 1234,<br>
   "population": 1000,<br>
   "information": "Do not forget visit National Library and Gallery!"<br>
   <br>
-- [PUT]/city/update/name/{cityName} - update only name of city by old name.<br>
+[PUT]/city/update/name/{cityName} - update only name of city by old name.<br>
 JSON example :<br>
 "name": "Minsk"<br>
 <br>
-- [PUT]/city/update/year/{cityName} - update only year of foundation by name of city.<br>
+[PUT]/city/update/year/{cityName} - update only year of foundation by name of city.<br>
 JSON example :<br>
 "yearOfFoundation": 1234,<br>
 <br>
-- [PUT]/city/update/population/{cityName} - update only population by name of city.<br>
+[PUT]/city/update/population/{cityName} - update only population by name of city.<br>
 Population must be indicated in thousands.<br>
 JSON example :<br>
 "population": 1000,<br>
 <br>
-- [POST]/city/update/information/{cityName} - update information about existing in database city by name.<br>
+[POST]/city/update/information/{cityName} - update information about existing in database city by name.<br>
 JSON example :<br>
 "information": "Do not forget visit National Library."<br>
 <br>
-- [GET]/city/all - get list of all cities from database in JSON.<br>
+[GET]/city/all - get list of all cities from database in JSON.<br>
 
